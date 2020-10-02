@@ -36,5 +36,5 @@ client.on('guildMemberAdd', member => {
     channel.send(`:wave: Hello ${member}, welcome to ${member.guild.name} region. Type !help to see command list.`);
   });
 
-client.login(token);
+client.login(process.env.TOKEN);
 
