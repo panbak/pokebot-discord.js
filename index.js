@@ -1,7 +1,11 @@
 const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
-const { token, prefix } = require('./config.json');
+const { TOKEN } = require('./config.json');
+
+const prefix = '!';
+
+const token = process.env.TOKEN || TOKEN;
 
 client.commands = new Discord.Collection();
 
@@ -36,5 +40,5 @@ client.on('guildMemberAdd', member => {
     channel.send(`:wave: Hello ${member}, welcome to ${member.guild.name} region. Type !help to see command list.`);
   });
 
-client.login(process.env.TOKEN);
+client.login(token);
 
